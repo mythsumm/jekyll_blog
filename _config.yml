@@ -2,7 +2,6 @@ markdown_ext:  markdown,mkd,mkdn,md
 highlighter: pygments
 permalink: /:year/:month/:day/:title.html
 name: "黑灯下活"
-markdown: PHP Markdown Extra
 
 author: "ethanliao"
 atom-baseurl: "https://mythsumm.github.io/jekyll_blog/"
