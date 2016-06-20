@@ -1,3 +1,4 @@
+markdown: rdiscount
 markdown_ext: markdown,mkd,mkdn,md
 highlighter: pygments
 permalink: /:year/:month/:day/:title.html
