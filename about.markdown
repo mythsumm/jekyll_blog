@@ -1,6 +1,6 @@
 ---
 title: archive
-layout: page
+layout: post
 ---
 
 I'am ethanliao.
