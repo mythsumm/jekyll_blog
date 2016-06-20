@@ -20,9 +20,6 @@ navigations:
   - title: About
     class: fa fa-user
     href: /about.html
-  - title: Gallery
-    class: fa fa-film
-    href: https://mythsumm.github.io/jekyll_blog
   - title: Subscribe
     class: fa fa-rss
     href: /atom.xml
