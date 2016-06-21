@@ -4,9 +4,9 @@ permalink: /:year/:month/:day/:title.html
 name: "黑灯下活"
 
 author: "ethanliao"
-atom-baseurl: "https://mythsumm.github.io/"
+atom-baseurl: "http://postdev.net/"
 disqus: "ethanliao"
-baseurl: "/"
+baseurl: ""
 
 
 navigations:
