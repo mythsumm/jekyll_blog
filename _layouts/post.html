@@ -23,6 +23,22 @@ layout: default
         {{ content }}
     </section>
 </article>
+<div class="divider">
+    <span>
+    {% if page.previous %}
+    <a href="{{ page.previous.url }}">{{ page.previous.title }}<i class="fa fa-chevron-left"></i></a>
+    {% else %}
+    <i class="fa fa-circle"></i>
+    {% endif %}
+    </span>
+    <span>
+    {% if page.next %}
+    <a href="{{ page.next.url }}"><i class="fa fa-chevron-right"></i>{{ page.next.title }}</a>
+    {% else %}
+    <i class="fa fa-circle"></i>
+    {% endif %}
+    </span>
+</div>
 <script id="dsq-count-scr" src="//ethanliao.disqus.com/count.js" async></script>
 <div id="disqus_thread"></div>
 <script>
@@ -31,12 +47,12 @@ layout: default
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
      */
 
-     var disqus_config = function () {
-     this.page.url = "{{ site.url }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
-     this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-     };
+    var disqus_config = function () {
+        this.page.url = "{{ site.url }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 
-    (function() {  // DON'T EDIT BELOW THIS LINE
+    (function () {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
 
         s.src = '//ethanliao.disqus.com/embed.js';
@@ -45,4 +61,5 @@ layout: default
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+    powered by Disqus.</a></noscript>
