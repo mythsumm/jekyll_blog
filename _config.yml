@@ -1,4 +1,13 @@
-markdown: rdiscount
+kramdown:
+  input: GFM
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+  enable_coderay: true
+  syntax_highlighter: rouge
+  coderay:
+    coderay_line_numbers:  nil
 highlighter: pygments
 permalink: /:year/:month/:day/:title.html
 name: "不默，而生"
