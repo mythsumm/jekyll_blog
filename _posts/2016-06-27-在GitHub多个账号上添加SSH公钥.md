@@ -22,9 +22,7 @@ tags:
 
      `ssh-add ~/.ssh/id_rsa_work`
 
-2. 打开新生成的~/.ssh/id_rsa2.pub文件，将里面的内容添加到GitHub后台。
-
-3. 打开~/.ssh/config文件（没有则创建），添加一个Host：
+2. 打开~/.ssh/config文件（没有则创建），添加一个Host：
 
    *建一个github别名，新建的帐号使用这个别名做克隆和更新*
    
@@ -37,10 +35,12 @@ tags:
      
     IdentityFile ~/.ssh/id_rsa2.pub
    ```
+
+3. 打开新生成的~/.ssh/id_rsa2.pub文件，将里面的内容添加到GitHub后台。
    
 4. 测试。
 
-    `ssh -T git@github.com`
+    `ssh -T github2`
 
 5. 应用，将GitHub SSH仓库地址中的git@github.com替换成新建的Host别名。
 
