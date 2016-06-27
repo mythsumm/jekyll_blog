@@ -27,6 +27,7 @@ tags:
 3. 打开~/.ssh/config文件（没有则创建），添加一个Host：
 
    *建一个github别名，新建的帐号使用这个别名做克隆和更新*
+   
    ```
     Host github2
      
@@ -36,6 +37,7 @@ tags:
      
     IdentityFile ~/.ssh/id_rsa2.pub
    ```
+   
 4. 测试。
 
     `ssh -T git@github.com`
