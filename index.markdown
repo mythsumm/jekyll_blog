@@ -3,7 +3,6 @@ layout: default
 ---
 {% for post in site.posts limit: 1 %}
 <div>
-  <ul class="listing">
   <article class="content">
     <section class="title">
       <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
@@ -23,9 +22,7 @@ layout: default
     <section class="post">
     {{ post.content }}
     </section>
-    </article>
-  </ul>
-
+   </article>
   <ul class="listing main-listing">
     <li class="listing-seperator"><a href="{{ site.baseurl }}/archive.html">Long long ago</a></li>
   </ul>
