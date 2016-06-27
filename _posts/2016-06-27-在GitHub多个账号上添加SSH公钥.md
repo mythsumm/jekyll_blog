@@ -6,7 +6,7 @@ tags:
     - SSh
     - 公钥
 ---
-*GitHub后台可以添加多个SSH Keys，但是同一个SSH Keys只能在添加在一个帐号上（添加时提示“Key is already in use”）。SSH公钥使用时相当于用户名密码，不能两个不同的帐号使用同一个用户名密码。要想在多个GitHub帐号上添加公钥，就要在本地生成多个SSH Keys，每个GitHub帐号对应一个不同的SSH Keys。步骤如下：*
+**GitHub后台可以添加多个SSH Keys，但是同一个SSH Keys只能在添加在一个帐号上（添加时提示“Key is already in use”）。SSH公钥使用时相当于用户名密码，不能两个不同的帐号使用同一个用户名密码。要想在多个GitHub帐号上添加公钥，就要在本地生成多个SSH Keys，每个GitHub帐号对应一个不同的SSH Keys。步骤如下：**
 
 1. 生成一个新的SSH KEY。
 
@@ -28,13 +28,13 @@ tags:
 
    *建一个github别名，新建的帐号使用这个别名做克隆和更新*
    ```
-     Host github2
+    Host github2
      
-     HostName github.com
+    HostName github.com
      
-     User git
+    User git
      
-     IdentityFile ~/.ssh/id_rsa2.pub
+    IdentityFile ~/.ssh/id_rsa2.pub
    ```
 4. 测试。
 
