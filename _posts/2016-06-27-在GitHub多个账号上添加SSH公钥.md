@@ -47,4 +47,4 @@ tags:
     *如原地址是：git@github.com:mythsumm/jekyll_blog.git，替换后应该是：github2:mythsumm/jekyll_blog.git
 如果是新建的仓库，直接使用替换后的URL克隆即可。如果已经使用原地址克隆过了，可以使用命令修改：*
 
-    `git remote set-url origin github2:freehost/mail.git`
+    `git remote set-url origin github2:mythsumm/jekyll_blog.git`
