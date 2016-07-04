@@ -12,7 +12,7 @@ tags:
 
     * `ssh-keygen -t rsa -C 'ethanliao924@gmail.com'`
 
-    * `Enter file in which to save the key (~/.ssh/id_rsa): id_rsa2`
+    * `Enter file in which to save the key (~/.ssh/id_rsa): ~/.ssh/id_rsa2`
 
     * `ssh-add ~/.ssh/id_rsa2`
 
