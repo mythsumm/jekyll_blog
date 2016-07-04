@@ -20,7 +20,7 @@ tags:
 
      `ssh-agent bash`
 
-     `ssh-add ~/.ssh/id_rsa_work`
+     `ssh-add ~/.ssh/id_rsa2`
 
 2. 打开~/.ssh/config文件（没有则创建），添加一个Host：
 
