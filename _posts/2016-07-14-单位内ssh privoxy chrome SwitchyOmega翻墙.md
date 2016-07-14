@@ -1,5 +1,5 @@
 ---
-title: '单位内ssh privoxy chrome SwitchyOmega'
+title: '单位内ssh privoxy chrome SwitchyOmega翻墙'
 layout: post
 tags:
     - ssh
