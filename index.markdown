@@ -22,7 +22,23 @@ layout: default
     <section class="post">
     {{ post.content }}
     </section>
-   </article>
+    <div class="divider">
+        <span>
+        {% if post.previous %}
+        <a href="{{ post.previous.url }}"><i class="fa fa-chevron-left"></i></a>
+        {% else %}
+        <i class="fa fa-circle"></i>
+        {% endif %}
+        </span>
+        <span>
+        {% if post.next %}
+        <a href="{{ post.next.url }}"><i class="fa fa-chevron-right"></i></a>
+        {% else %}
+        <i class="fa fa-circle"></i>
+        {% endif %}
+        </span>
+    </div>
+   </article> 
   <ul class="listing main-listing">
     <li class="listing-seperator"><a href="{{ site.baseurl }}/archive.html">Long long ago</a></li>
   </ul>
