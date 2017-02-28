@@ -9,14 +9,11 @@ kramdown:
 highlighter: pygments
 permalink: /:year/:month/:day/:title.html
 name: "不默，而生"
-
 author: "ethanliao"
-atom-baseurl: "http://postdev.net/"
-url: "http://postdev.net/"
+atom-baseurl: "http://postdev.net"
+url: "http://postdev.net"
 disqus: "ethanliao"
 baseurl: ""
-
-
 navigations:
   - title: Archive
     class: fa fa-list-ul
