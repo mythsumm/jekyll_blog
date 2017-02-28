@@ -11,11 +11,8 @@ tags:
  秉着要使用原汁原味的Google的原则，定要将其改为google.com。我的第一反应就是先google一番答案。觉得靠谱的就是下面这个了。
 
  > 1. 登录谷歌账号
- >
  > 2. 默认搜索语言为英文
- >
  > 3. 默认搜索引擎为： https://www.google.com/search?hl=en-US&source=hp&q=%s&aq=f&aqi=&aql=&oq=&gs_rfai=
- >
  > 4. 使用一次 https://www.google.com/ncr  搜索
 
  **其实只需要实际操作一个步骤就可以一劳永逸。具体操作如下：**

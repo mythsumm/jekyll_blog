@@ -1,19 +1,18 @@
 kramdown:
-  input: GFM
-  extensions:
-    - autolink
-    - footnotes
-    - smart
-  enable_coderay: true
-  syntax_highlighter: coderay
-  syntax_highlighter_opts: {}
+  auto_ids:       true
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1
 highlighter: pygments
 permalink: /:year/:month/:day/:title.html
 name: "不默，而生"
 
 author: "ethanliao"
-atom-baseurl: "http://postdev.net/"
-url: "http://postdev.net"
+atom-baseurl: "/"
+url: "/"
 disqus: "ethanliao"
 baseurl: ""
 
