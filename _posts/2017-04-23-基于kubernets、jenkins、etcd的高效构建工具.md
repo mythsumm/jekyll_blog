@@ -20,7 +20,7 @@ tags:
 > Etcd是一个高可用的键值存储系统，主要用于共享配置和服务发现。下面利用etcd作为旁路系统，主要用来实现状态变更的定制化操作与配置同步。
 >
 >
-> ##环境搭建
+> ## 环境搭建
 >
 > * mac os 10.12.3
 > * docker [^docker]
@@ -29,7 +29,7 @@ tags:
 > * minikube && kubectl [^minikube]
 > * etcd [^etcd]
 
-##在k8s中创建应用
+## 在k8s中创建应用
 ![deploy app in k8s](http://o94lfo79s.bkt.clouddn.com/67DCAA87-6BBD-4131-8C5C-4CFCEB5FFD44.jpg?e=1492962315&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:30FNP1KCn6IOP3VB7PVDsMjkTPM)
 此时应用所使用的镜像为*app-k8stest:2*
 
@@ -42,7 +42,7 @@ tags:
 ![k8s app runing](http://o94lfo79s.bkt.clouddn.com/534EAA1B-0C67-4FEB-99DE-6CA9BDA3CD6F.jpg?e=1492962973&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:r0APPuGRymFRk5eEnmO15UbX05g)
 
 
-##新建并配置jinkins工作空间
+## 新建并配置jinkins工作空间
 ![配置jinkins工作空间](http://o94lfo79s.bkt.clouddn.com/E053F21A-E2AE-4BA2-82CB-8AD5D09F28EB.jpg?e=1492961022&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:G7SzKRpJs7yZLGyzLpdpTyMTZPk)
 构建的代码仓库为*git@github.com:mythsumm/k8s-test.git/test*
 构建时需执行*build.sh*这个shell脚本，主要有三个步骤。
@@ -86,31 +86,36 @@ docker push ${REGISTRY_URL}app-${JOB_NAME}:${BUILD_NUMBER}
 +<?php
 +phpinfo();
 ```
-####构建：
+#### 构建：
 ![jenkins](http://o94lfo79s.bkt.clouddn.com/830129D2-8EC0-42BE-B7FD-9DB35B75025C.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:mQmxm6_OgVTBe3Vd6zeqlp7zsLI)
 
-####k8s中的镜像已经改变：
+#### k8s中的镜像已经改变：
 ![images](http://o94lfo79s.bkt.clouddn.com/4A7CA8F5-E7C6-45CF-BF11-894742F48AAD.jpg?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:gQ98T56mWnv76X6eNUCUYLNbTZI)
 
-####此时，应用也改变了。
+#### 此时，应用也改变了。
 ![kubernetes app runing](http://o94lfo79s.bkt.clouddn.com/D59F45EF-E11A-4060-95E4-FD3D2A6EE079.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:J2jScy_tHiTxAtih9vNeBTpVieU)
 
-###若应用使用的变量经常发生改变，如数据库地址等，则完全没有必要再重复一遍上面的流程。可以搭建一套变量配置系统，当相关应用所使用的变量发生改变时则改变其在etcd中的值，如若此时该应用一直侦听etcd中的值，就可以同步至最新的变量。
+### 若应用使用的变量经常发生改变，如数据库地址等，则完全没有必要再重复一遍上面的流程。可以搭建一套变量配置系统，当相关应用所使用的变量发生改变时则改变其在etcd中的值，如若此时该应用一直侦听etcd中的值，就可以同步至最新的变量。
 1. 搭建etcd服务器
 2. 变量配置系统中用etcd设置值 *composer update "linkorb/etcd-php": "1.2.1" && $client->set('***', '***');*
 3. 容器在启动后运行*bypass.sh*循环监听值的变化
 
-##结束语
+##  结束语
 如上所述，则可以搭建一套高效的构建工具。既可以使用k8s的灵活伸缩性，也能方便的配置变量等...。
 
 
 ## refs:
 
-[^docker]: [Mac OS 安装 Docker](https://github.com/widuu/chinese_docker/blob/master/installation/mac.md).
-[^jenkins]: [Mac OS 安装 Jenkins](http://www.jianshu.com/p/ab3302cd68eb).
-[^registry]: [run registry in docker](https://hub.docker.com/_/registry/).
-[^minikube]: [Mac OS 安装 kubernetes](http://www.jianshu.com/p/a42eeb66a19c).
-[^etcd]: [run etcd in docker](https://hub.docker.com/r/microbox/etcd/).
+[^docker]: [Mac OS 安装 Docker](https://github.com/widuu/chinese_docker/blob/master/installation/mac.md)
+
+[^jenkins]: [Mac OS 安装 Jenkins](http://www.jianshu.com/p/ab3302cd68eb)
+
+[^registry]: [run registry in docker](https://hub.docker.com/_/registry/)
+
+[^minikube]: [Mac OS 安装 kubernetes](http://www.jianshu.com/p/a42eeb66a19c)
+
+[^etcd]: [run etcd in docker](https://hub.docker.com/r/microbox/etcd/)
+
 
 
 
