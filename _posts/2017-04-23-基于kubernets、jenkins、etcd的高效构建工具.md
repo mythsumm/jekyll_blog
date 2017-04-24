@@ -1,8 +1,8 @@
 ---
-title: '基于kubernets、jenkins、etcd的高效构建工具'
+title: '基于kubernetes、jenkins、etcd的高效构建工具'
 layout: post
 tags:
-    - kubernets
+    - kubernetes
     - k8s
     - 持续集成
     - etcd
