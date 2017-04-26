@@ -45,10 +45,10 @@ tags:
 ## 新建并配置jinkins工作空间
 ![配置jinkins工作空间](http://o94lfo79s.bkt.clouddn.com/E053F21A-E2AE-4BA2-82CB-8AD5D09F28EB.jpg?e=1492961022&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:G7SzKRpJs7yZLGyzLpdpTyMTZPk)
 构建的代码仓库为*git@github.com:mythsumm/k8s-test.git/test*
-构建时需执行*build.sh*这个shell脚本，主要有三个步骤。
-1. 用新提交的代码构建新镜像。
-2. 将镜像打上标签并推到registry服务中。
-3. 将容器中的镜像动态更新为刚build好的registry服务中的镜像。
+构建时需执行*build.sh*这个shell脚本，主要有三个步骤。  
+1. 用新提交的代码构建新镜像。  
+2. 将镜像打上标签并推到registry服务中。  
+3. 将容器中的镜像动态更新为刚build好的registry服务中的镜像。  
 
 ```
 #!/usr/bin/env sh
@@ -86,6 +86,7 @@ docker push ${REGISTRY_URL}app-${JOB_NAME}:${BUILD_NUMBER}
 +<?php
 +phpinfo();
 ```
+
 #### 构建：
 ![jenkins](http://o94lfo79s.bkt.clouddn.com/830129D2-8EC0-42BE-B7FD-9DB35B75025C.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:mQmxm6_OgVTBe3Vd6zeqlp7zsLI)
 
@@ -95,13 +96,13 @@ docker push ${REGISTRY_URL}app-${JOB_NAME}:${BUILD_NUMBER}
 #### 此时，应用也改变了。
 ![kubernetes app runing](http://o94lfo79s.bkt.clouddn.com/D59F45EF-E11A-4060-95E4-FD3D2A6EE079.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:J2jScy_tHiTxAtih9vNeBTpVieU)
 
-### 若应用使用的变量经常发生改变，如数据库地址等，则完全没有必要再重复一遍上面的流程。可以搭建一套变量配置系统，当相关应用所使用的变量发生改变时则改变其在etcd中的值，如若此时该应用一直侦听etcd中的值，就可以同步至最新的变量。
+### 若应用使用的变量经常发生改变，如数据库地址等，则完全没有必要再重复一遍上面的流程。可以搭配一套旁路系统，当相关应用所使用的变量发生改变时则改变其在etcd中的值，如若此时该应用一直侦听etcd中的值（修改Dockerfile），就可以同步变量至应用容器中。
 1. 搭建etcd服务器
-2. 变量配置系统中用etcd设置值 *composer update "linkorb/etcd-php": "1.2.1" && $client->set('***', '***');*
-3. 容器在启动后运行*bypass.sh*循环监听值的变化
+2. 变量配置系统中用etcd设置值 *composer update "linkorb/etcd-php": "1.2.1" && $client->set('xxx', 'xxx');*
+3. 容器在启动后运行*bypass.sh*循环监听值的变化，可改造成独立旁路系统（功能更强大）。
 
 ##  结束语
-如上所述，则可以搭建一套高效的构建工具。既可以使用k8s的灵活伸缩性，也能方便的配置变量等...。
+如上所述，则可搭建一套高效的容器化构建工具。既有k8s的灵活伸缩性、HA、负载均衡，也能兼容各环境变量变化，统一qa、预发布、生产环境，符合微服务概念，有助于敏捷开发，提高工作效率。 
 
 
 ## refs:
