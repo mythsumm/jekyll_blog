@@ -36,7 +36,7 @@ tags:
   - 如下图，代理服务器为开发机IP地址，8118为privoxy监听端口号。
 
 ---
-<img src='http://o94lfo79s.bkt.clouddn.com/CC0B82AE-9016-48B4-A72F-75BCB2231206.png-watermark' width='80%' alt='Switchy Omega扩展代理配置' />
+<img src='{{site.url}}/media/img/CC0B82AE-9016-48B4-A72F-75BCB2231206.png' width='80%' alt='Switchy Omega扩展代理配置' />
 
 配置好后在地址栏中输入<http://p.p>正常显示则表示梯子已经搭好了哦。：-）
 

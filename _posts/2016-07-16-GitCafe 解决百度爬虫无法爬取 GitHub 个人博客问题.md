@@ -7,7 +7,7 @@ tags:
     - 百度爬虫
 ---
 ### GitHub 禁止百度爬虫
-![curl -A 模拟百度爬虫](http://o94lfo79s.bkt.clouddn.com/YXU$6%5BPQ_G%25I%5DWF~%7D@~%60SY8.jpg-watermark)
+![curl -A 模拟百度爬虫]({{site.url}}/media/img/YXU$6%5BPQ_G%25I%5DWF~%7D@~%60SY8.jpg)
 通过上图发现，百度爬虫是无法爬取到 GitHub 上的内容的。
 想用 GitHub 托管个人博客，同时又想被百度爬虫爬取到的筒子有以下方法：
 
@@ -23,7 +23,7 @@ tags:
 
 配置域名解析。
 
-![域名解析](http://o94lfo79s.bkt.clouddn.com/F29VMUNYODSRYYO9KJF8PSE.jpg-watermark)
+![域名解析]({{site.url}}/media/img/F29VMUNYODSRYYO9KJF8PSE.jpg)
 国内用户访问 GitCafe，国外用户访问 GitHub。访问速度可提升不少。
 
 在 GitHub 工作目录中编辑完内容之后需要将代码一并 Push 到 GitCafe 远端仓库。

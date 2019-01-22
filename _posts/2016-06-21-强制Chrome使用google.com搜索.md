@@ -22,7 +22,7 @@ tags:
 
  如图。
 
- ![默认搜索设置](http://o94lfo79s.bkt.clouddn.com/QILW7QQ_6FRHBZZBKXM0J_O.png-watermark)
+ ![默认搜索设置]({{site.url}}/media/img/QILW7QQ_6FRHBZZBKXM0J_O.png)
 
 
 
