@@ -30,20 +30,20 @@ tags:
 > * etcd [^etcd]
 
 ## 在k8s中创建应用
-![deploy app in k8s]({{site.url}}/media/img/67DCAA87-6BBD-4131-8C5C-4CFCEB5FFD44.jpg?e=1492962315&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:30FNP1KCn6IOP3VB7PVDsMjkTPM)
+![deploy app in k8s]({{ site.atom-baseurl }}/media/img/67DCAA87-6BBD-4131-8C5C-4CFCEB5FFD44.jpg?e=1492962315&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:30FNP1KCn6IOP3VB7PVDsMjkTPM)
 此时应用所使用的镜像为*app-k8stest:2*
 
 稍等片刻直到应用启动完毕！
-![app runing]({{site.url}}/media/img/2B6C0F33-6FDF-4EF5-B0A8-CD9276F437F0.jpg?e=1492962711&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:xTTByp_bx3abBchr2FZAs289Uro)
+![app runing]({{ site.atom-baseurl }}/media/img/2B6C0F33-6FDF-4EF5-B0A8-CD9276F437F0.jpg?e=1492962711&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:xTTByp_bx3abBchr2FZAs289Uro)
 
-![minikube service k8stest --url]({{site.url}}/media/img/6054F559-28AD-4CA6-A07E-085384105B2D.jpg?e=1492962557&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:xTfDniLvYesmEH5CvbMwcW8jBGI)
+![minikube service k8stest --url]({{ site.atom-baseurl }}/media/img/6054F559-28AD-4CA6-A07E-085384105B2D.jpg?e=1492962557&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:xTfDniLvYesmEH5CvbMwcW8jBGI)
 
 输入上述host可以打开应用。
-![k8s app runing]({{site.url}}/media/img/534EAA1B-0C67-4FEB-99DE-6CA9BDA3CD6F.jpg?e=1492962973&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:r0APPuGRymFRk5eEnmO15UbX05g)
+![k8s app runing]({{ site.atom-baseurl }}/media/img/534EAA1B-0C67-4FEB-99DE-6CA9BDA3CD6F.jpg?e=1492962973&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:r0APPuGRymFRk5eEnmO15UbX05g)
 
 
 ## 新建并配置jinkins工作空间
-![配置jinkins工作空间]({{site.url}}/media/img/E053F21A-E2AE-4BA2-82CB-8AD5D09F28EB.jpg?e=1492961022&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:G7SzKRpJs7yZLGyzLpdpTyMTZPk)
+![配置jinkins工作空间]({{ site.atom-baseurl }}/media/img/E053F21A-E2AE-4BA2-82CB-8AD5D09F28EB.jpg?e=1492961022&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:G7SzKRpJs7yZLGyzLpdpTyMTZPk)
 构建的代码仓库为*git@github.com:mythsumm/k8s-test.git/test*
 构建时需执行*build.sh*这个shell脚本，主要有三个步骤。  
 1. 用新提交的代码构建新镜像。  
@@ -75,7 +75,7 @@ docker push ${REGISTRY_URL}app-${JOB_NAME}:${BUILD_NUMBER}
 
 ```
 构建过程中生成的镜像
-![registry]({{site.url}}/media/img/23807593-01B5-4B7D-BE07-957C9B822CB5.jpg?e=1492961022&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:2Zk6RI3JwgLciA82lvGFArmpqz4)
+![registry]({{ site.atom-baseurl }}/media/img/23807593-01B5-4B7D-BE07-957C9B822CB5.jpg?e=1492961022&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:2Zk6RI3JwgLciA82lvGFArmpqz4)
 
 如若此时修改*server.php*中的代码提交且在jenkins中再构建完毕，应用将使用最近一次构建的镜像。
 
@@ -88,13 +88,13 @@ docker push ${REGISTRY_URL}app-${JOB_NAME}:${BUILD_NUMBER}
 ```
 
 #### 构建：
-![jenkins]({{site.url}}/media/img/830129D2-8EC0-42BE-B7FD-9DB35B75025C.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:mQmxm6_OgVTBe3Vd6zeqlp7zsLI)
+![jenkins]({{ site.atom-baseurl }}/media/img/830129D2-8EC0-42BE-B7FD-9DB35B75025C.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:mQmxm6_OgVTBe3Vd6zeqlp7zsLI)
 
 #### k8s中的镜像已经改变：
-![images]({{site.url}}/media/img/4A7CA8F5-E7C6-45CF-BF11-894742F48AAD.jpg?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:gQ98T56mWnv76X6eNUCUYLNbTZI)
+![images]({{ site.atom-baseurl }}/media/img/4A7CA8F5-E7C6-45CF-BF11-894742F48AAD.jpg?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:gQ98T56mWnv76X6eNUCUYLNbTZI)
 
 #### 此时，应用也改变了。
-![kubernetes app runing]({{site.url}}/media/img/D59F45EF-E11A-4060-95E4-FD3D2A6EE079.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:J2jScy_tHiTxAtih9vNeBTpVieU)
+![kubernetes app runing]({{ site.atom-baseurl }}/media/img/D59F45EF-E11A-4060-95E4-FD3D2A6EE079.png?e=1492963706&token=A_CmML41AGuqYDDfvh1Am3ztaJH9peHW9a8ZML88:J2jScy_tHiTxAtih9vNeBTpVieU)
 
 ### 若应用使用的变量经常发生改变，如数据库地址等，则完全没有必要再重复一遍上面的流程。可以搭配一套旁路系统，当相关应用所使用的变量发生改变时则改变其在etcd中的值，如若此时该应用一直侦听etcd中的值（修改Dockerfile），就可以同步变量至应用容器中。
 1. 搭建etcd服务器
