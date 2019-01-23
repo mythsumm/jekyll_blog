@@ -68,7 +68,7 @@
 // HiDPI mixin. Default value set to 1.3 to target Google Nexus 7
 // (http://bjango.com/articles/min-device-pixel-ratio/)
 
-@mixin hdpi($ratio: 1.3) {
+@mixin hdpi($ratio: 1) {
   @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
   only screen and (min--moz-device-pixel-ratio: $ratio),
   only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
@@ -194,7 +194,7 @@
 @mixin iphone6($orientation: all) {
   $deviceMinWidth: 375px;
   $deviceMaxWidth: 667px;
-  $devicePixelRatio: 2;
+  $devicePixelRatio: 1;
 
   @if $orientation == all {
     @media only screen
@@ -220,7 +220,7 @@
 @mixin iphone6-plus($orientation: all) {
   $deviceMinWidth: 414px;
   $deviceMaxWidth: 736px;
-  $devicePixelRatio: 3;
+  $devicePixelRatio: 1;
 
   @if $orientation == all {
     @media only screen
